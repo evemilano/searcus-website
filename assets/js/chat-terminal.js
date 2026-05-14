@@ -59,7 +59,8 @@
         isInFlight: false,
         initialized: false,
         prefersReducedMotion: false,
-        terminalInView: true
+        terminalInView: true,
+        reservedBodyHeight: 0
     };
 
     // ─── Utilities ───
@@ -358,7 +359,12 @@
         });
 
         if (state.terminalInView) {
-            setTimeout(function () { try { input.focus(); } catch (e) {} }, 60);
+            // preventScroll: evita che il browser faccia scroll della pagina per
+            // portare l'input nel viewport (rompe il layout dell'hero centrato).
+            setTimeout(function () {
+                try { input.focus({ preventScroll: true }); }
+                catch (e) { try { input.focus(); } catch (_) {} }
+            }, 60);
         }
         return { row: row, input: input };
     }
@@ -459,9 +465,12 @@
         if (state.initialized) return;
         state.initialized = true;
 
-        // Fissa altezza massima del body terminale + scroll interno
-        const currentH = state.body.scrollHeight;
-        state.body.style.maxHeight = (currentH + 220) + 'px';
+        // Layout stabile: il body è già stato pre-dimensionato in init() con la
+        // min-height riservata per welcome + input row + buffer chat. Qui cappo
+        // la max-height a quella stessa misura: tutto ciò che eccede scrolla
+        // INTERNAMENTE al terminale senza espandere la hero section.
+        const reservedH = state.reservedBodyHeight || state.body.scrollHeight;
+        state.body.style.maxHeight = reservedH + 'px';
         state.body.classList.add('terminal-scrollable');
 
         // Rimuovi il caret lampeggiante dall'ultima riga statica originale
@@ -495,6 +504,67 @@
         scrollToBottom();
     }
 
+    // Misura il body terminale appendendo welcome + input row "fantasma"
+    // (visibility: hidden) per leggere lo scrollHeight finale, poi rimuove
+    // i probe e imposta min-height + cap di max-height a quella misura.
+    // Solo PRIMA dell'attivazione chat: dopo, il body contiene già welcome+input
+    // reali (più eventuali messaggi) e accodare probe falserebbe la misura.
+    // Su resize post-attivazione il box è già scrollable internamente, quindi
+    // non serve re-misurare.
+    function measureAndReserve() {
+        if (!state.body || state.initialized) return;
+
+        // Probe welcome (stesso markup di activateChat per identica metrica)
+        const wProbe = document.createElement('div');
+        wProbe.className = 'terminal-static-line chat-welcome';
+        wProbe.setAttribute('aria-hidden', 'true');
+        wProbe.style.visibility = 'hidden';
+        const gt = document.createElement('span');
+        gt.className = 'text-mist';
+        gt.textContent = '> ';
+        const txt = document.createElement('span');
+        txt.textContent = state.strings.welcome;
+        wProbe.appendChild(gt);
+        wProbe.appendChild(txt);
+
+        // Probe input row
+        const irProbe = document.createElement('div');
+        irProbe.className = 'chat-input-row terminal-static-line';
+        irProbe.setAttribute('aria-hidden', 'true');
+        irProbe.style.visibility = 'hidden';
+        const promptSpan = document.createElement('span');
+        promptSpan.className = 'text-mist chat-input-prompt';
+        promptSpan.textContent = '$';
+        const probeInput = document.createElement('input');
+        probeInput.type = 'text';
+        probeInput.className = 'chat-input';
+        probeInput.tabIndex = -1;
+        probeInput.setAttribute('aria-hidden', 'true');
+        irProbe.appendChild(promptSpan);
+        irProbe.appendChild(probeInput);
+
+        // Reset min-height per ottenere lo scrollHeight reale (su resize
+        // re-misurazione: la min-height precedente falserebbe la lettura).
+        // Anche maxHeight va resettato perché vincolerebbe scrollHeight.
+        const prevMaxH = state.body.style.maxHeight;
+        state.body.style.minHeight = '0px';
+        state.body.style.maxHeight = 'none';
+
+        state.body.appendChild(wProbe);
+        state.body.appendChild(irProbe);
+
+        // Sync reflow: leggere scrollHeight forza il layout
+        const target = state.body.scrollHeight;
+
+        state.body.removeChild(wProbe);
+        state.body.removeChild(irProbe);
+
+        // +4px buffer per arrotondamenti sub-pixel su HiDPI
+        state.reservedBodyHeight = target + 4;
+        state.body.style.minHeight = state.reservedBodyHeight + 'px';
+        state.body.style.maxHeight = prevMaxH;
+    }
+
     function init() {
         const found = findTerminal();
         if (!found) return; // niente terminale in pagina → silent no-op
@@ -505,6 +575,24 @@
         state.strings = STRINGS[state.lang];
         state.prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
         state.sessionId = getOrCreateSessionId();
+
+        // ─── Layout reservation ──────────────────────────────────────────────
+        // Le 8 righe del typewriter CSS occupano già spazio di layout fin dal
+        // primo paint (clip-path nasconde i pixel ma non rimuove il flusso).
+        // Per stabilizzare l'hero anche su mobile (dove la welcome message
+        // va a capo su 2-3 righe) misuro la dimensione FINALE del body con
+        // welcome + input row temporaneamente appesi e nascosti, leggo lo
+        // scrollHeight, rimuovo i probe e lasso una min-height pari a quella
+        // misura. Così activateChat() non genera reflow su nessun viewport.
+        measureAndReserve();
+        // Su orientation change il wrap della welcome cambia → re-misuro.
+        if (window.addEventListener) {
+            let resizeTimer = null;
+            window.addEventListener('resize', function () {
+                if (resizeTimer) clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(measureAndReserve, 200);
+            }, { passive: true });
+        }
 
         // Traccia se il terminale è in viewport (per decidere se rubare focus)
         if (typeof IntersectionObserver === 'function') {

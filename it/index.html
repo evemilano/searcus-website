@@ -112,7 +112,7 @@
     </div>
 
     <!-- ========== HERO ========== -->
-    <section class="aurora-bg min-h-svh flex flex-col items-center justify-center px-4 pt-16 md:pt-4 relative">
+    <section class="aurora-bg min-h-svh flex flex-col items-center justify-center px-4 pt-16 md:pt-28 pb-20 md:pb-28 relative">
         <div class="max-w-4xl mx-auto text-center">
             <!-- Monospace label -->
             <p class="font-mono text-xs md:text-sm tracking-widest text-ember mb-8">// dal 2010 &mdash; Lugano, Svizzera</p>
@@ -167,18 +167,43 @@
         </div>
     </section>
 
-    <!-- ========== CREDIBILITY BAR ========== -->
-    <section class="bg-obsidian border-y border-wire py-5 px-4 overflow-x-auto cv-auto">
-        <div class="max-w-6xl mx-auto flex items-center justify-center gap-4 md:gap-10 font-mono text-xs md:text-sm whitespace-nowrap">
-            <span class="text-mist">Operativi dal 2010</span>
-            <span class="text-wire">|</span>
-            <span class="text-mist">Google Partner dal 2012</span>
-            <span class="text-wire">|</span>
-            <span class="text-ember">SISTRIX Partner dal 2018</span>
-            <span class="text-wire">|</span>
-            <span class="text-verified">Zero penalizzazioni Google</span>
-            <span class="text-wire hidden sm:inline">|</span>
-            <span class="text-mist hidden sm:inline">Clienti in 6+ paesi europei</span>
+    <!-- ========== CREDIBILITY BAR (marquee, stesso pattern di .rss-ticker) ========== -->
+    <section class="rss-ticker py-5 cv-auto" aria-label="Credenziali">
+        <div class="rss-ticker-track font-mono text-xs md:text-sm">
+            <!-- Gruppo 1 -->
+            <span class="px-6 whitespace-nowrap text-mist">Operativi dal 2010</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-mist">Google Partner dal 2012</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-ember">SISTRIX Partner dal 2018</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-verified">Zero penalizzazioni Google</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-mist">Clienti in 6+ paesi europei</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-mist">Technical SEO &amp; PPC enterprise</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-mist">Sede a Lugano, Svizzera</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <span class="px-6 whitespace-nowrap text-verified">Core Web Vitals 100/100</span>
+            <span class="px-2 whitespace-nowrap text-wire">|</span>
+            <!-- Gruppo 2 (duplicato per loop infinito senza salti) -->
+            <span class="px-6 whitespace-nowrap text-mist" aria-hidden="true">Operativi dal 2010</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-mist" aria-hidden="true">Google Partner dal 2012</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-ember" aria-hidden="true">SISTRIX Partner dal 2018</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-verified" aria-hidden="true">Zero penalizzazioni Google</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-mist" aria-hidden="true">Clienti in 6+ paesi europei</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-mist" aria-hidden="true">Technical SEO &amp; PPC enterprise</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-mist" aria-hidden="true">Sede a Lugano, Svizzera</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
+            <span class="px-6 whitespace-nowrap text-verified" aria-hidden="true">Core Web Vitals 100/100</span>
+            <span class="px-2 whitespace-nowrap text-wire" aria-hidden="true">|</span>
         </div>
     </section>
 
@@ -668,7 +693,6 @@
 
     <!-- JS -->
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor.js" defer></script>
     <script src="/assets/js/vendor/marked.min.js" defer></script>
     <script src="/assets/js/vendor/purify.min.js" defer></script>
     <script src="/assets/js/chat-terminal.js" defer></script>
