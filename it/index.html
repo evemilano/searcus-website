@@ -65,13 +65,586 @@
     <!-- Web Vitals (loaded early to capture LCP) -->
     <script src="https://unpkg.com/web-vitals@4/dist/web-vitals.iife.js"></script>
     <script src="/assets/js/charts.js" defer></script>
+
+    <!-- Schema.org JSON-LD — Organization, Person, OfferCatalog, ItemList, WebSite, WebPage -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://searcus.ch/#organization",
+      "name": "Searcus Swiss SAGL",
+      "legalName": "Searcus Swiss SAGL",
+      "alternateName": "Searcus",
+      "description": "Agenzia di consulenza Technical SEO, International SEO, PPC e AI development. Fondata nel 2010 a Lugano, Svizzera. Clienti enterprise in Svizzera, Italia, Danimarca, UK, Germania e resto d'Europa.",
+      "slogan": "Analizziamo come Google vede il tuo sito.",
+      "url": "https://searcus.ch/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://searcus.ch/#logo",
+        "url": "https://searcus.ch/assets/images/logo.png",
+        "contentUrl": "https://searcus.ch/assets/images/logo.png",
+        "width": 860,
+        "height": 860,
+        "caption": "Searcus Swiss SAGL"
+      },
+      "image": { "@id": "https://searcus.ch/#logo" },
+      "foundingDate": "2010-01-01",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Lugano, Svizzera",
+        "sameAs": "https://www.wikidata.org/wiki/Q5887"
+      },
+      "founder": { "@id": "https://searcus.ch/#person" },
+      "employee": [{ "@id": "https://searcus.ch/#person" }],
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 3 },
+      "vatID": "CHE-180.818.315",
+      "taxID": "CHE-180.818.315",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "UID",
+        "name": "Numero UID Svizzera",
+        "value": "CHE-180.818.315"
+      },
+      "priceRange": "€€€",
+      "currenciesAccepted": "CHF, EUR",
+      "paymentAccepted": "Bank Transfer",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "name": "Sede legale",
+          "streetAddress": "Via dei Faggi, 4V",
+          "addressLocality": "Pazzallo",
+          "addressRegion": "TI",
+          "postalCode": "6912",
+          "addressCountry": "CH"
+        },
+        {
+          "@type": "PostalAddress",
+          "name": "Sede operativa",
+          "streetAddress": "Via Penate, 16",
+          "addressLocality": "Mendrisio",
+          "addressRegion": "TI",
+          "postalCode": "6850",
+          "addressCountry": "CH"
+        }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.971,
+        "longitude": 8.9485
+      },
+      "hasMap": "https://maps.google.com/?q=Via+dei+Faggi+4V,+Pazzallo,+6912+Lugano,+Switzerland",
+      "email": "giovanni@searcus.ch",
+      "telephone": "+41798643035",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer support",
+          "telephone": "+41798643035",
+          "email": "giovanni@searcus.ch",
+          "areaServed": "CH",
+          "availableLanguage": ["Italian", "English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer support",
+          "telephone": "+393393668879",
+          "areaServed": "IT",
+          "availableLanguage": ["Italian", "English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "giovanni@searcus.ch",
+          "availableLanguage": ["Italian", "English"]
+        }
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "Switzerland", "sameAs": "https://www.wikidata.org/wiki/Q39" },
+        { "@type": "Country", "name": "Italy", "sameAs": "https://www.wikidata.org/wiki/Q38" },
+        { "@type": "Country", "name": "Denmark", "sameAs": "https://www.wikidata.org/wiki/Q35" },
+        { "@type": "Country", "name": "United Kingdom", "sameAs": "https://www.wikidata.org/wiki/Q145" },
+        { "@type": "Country", "name": "Germany", "sameAs": "https://www.wikidata.org/wiki/Q183" },
+        { "@type": "Place", "name": "Europe", "sameAs": "https://www.wikidata.org/wiki/Q46" }
+      ],
+      "knowsAbout": [
+        { "@type": "Thing", "name": "Search Engine Optimization", "sameAs": "https://www.wikidata.org/wiki/Q180711" },
+        { "@type": "Thing", "name": "Technical SEO" },
+        { "@type": "Thing", "name": "International SEO" },
+        { "@type": "Thing", "name": "Core Web Vitals" },
+        { "@type": "Thing", "name": "Search Engine Marketing", "sameAs": "https://www.wikidata.org/wiki/Q1369773" },
+        { "@type": "Thing", "name": "Google Ads", "sameAs": "https://www.wikidata.org/wiki/Q4233718" },
+        { "@type": "Thing", "name": "Pay-per-click", "sameAs": "https://www.wikidata.org/wiki/Q1762621" },
+        { "@type": "Thing", "name": "Reddit", "sameAs": "https://www.wikidata.org/wiki/Q1136" },
+        { "@type": "Thing", "name": "Artificial Intelligence", "sameAs": "https://www.wikidata.org/wiki/Q11660" },
+        { "@type": "Thing", "name": "Large Language Model", "sameAs": "https://www.wikidata.org/wiki/Q115305900" },
+        { "@type": "Thing", "name": "Retrieval-Augmented Generation" },
+        { "@type": "Thing", "name": "AI Agents" },
+        { "@type": "Thing", "name": "Python", "sameAs": "https://www.wikidata.org/wiki/Q28865" },
+        { "@type": "Thing", "name": "Server log analysis" }
+      ],
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Italian", "alternateName": "it" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "hasCertification": [
+        {
+          "@type": "Certification",
+          "name": "Google Partner",
+          "issuedBy": { "@type": "Organization", "name": "Google" },
+          "validFrom": "2012-01-01"
+        },
+        {
+          "@type": "Certification",
+          "name": "SISTRIX Partner",
+          "issuedBy": { "@type": "Organization", "name": "SISTRIX" },
+          "validFrom": "2018-01-01"
+        }
+      ],
+      "award": [
+        "Google Partner dal 2012",
+        "SISTRIX Partner dal 2018",
+        "Zero penalizzazioni Google dal 2010"
+      ],
+      "keywords": [
+        "Agenzia Technical SEO",
+        "Agenzia International SEO",
+        "Agenzia Google Ads",
+        "Agenzia PPC",
+        "Agenzia AI Development",
+        "Consulenza SEO Lugano",
+        "SEO enterprise",
+        "Reddit Ads",
+        "LLM Integration"
+      ],
+      "brand": { "@type": "Brand", "name": "Searcus", "url": "https://searcus.ch/" },
+      "hasOfferCatalog": { "@id": "https://searcus.ch/#services" },
+      "subjectOf": { "@id": "https://searcus.ch/#clients" },
+      "sameAs": [
+        "https://www.linkedin.com/in/giovannisacheli/",
+        "https://github.com/evemilano",
+        "https://x.com/EVEMilano",
+        "https://www.youtube.com/@EvemilanoSEO"
+      ],
+      "publicAccess": true
+    },
+    {
+      "@type": "Person",
+      "@id": "https://searcus.ch/#person",
+      "name": "Giovanni Sacheli",
+      "givenName": "Giovanni",
+      "familyName": "Sacheli",
+      "jobTitle": "Founder, Senior Technical SEO & PPC Consultant",
+      "description": "Consulente Technical SEO, Google Ads e AI development. Fondatore di Searcus Swiss SAGL nel 2010.",
+      "url": "https://searcus.ch/#person",
+      "email": "giovanni@searcus.ch",
+      "telephone": "+41798643035",
+      "gender": { "@type": "GenderType", "name": "Male" },
+      "image": "https://searcus.ch/assets/images/20140305-Giovanni-Sacheli-5.jpg",
+      "nationality": { "@type": "Country", "name": "Italy", "sameAs": "https://www.wikidata.org/wiki/Q38" },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Lugano",
+        "sameAs": "https://www.wikidata.org/wiki/Q5887"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Università Commerciale Luigi Bocconi",
+        "sameAs": "https://www.wikidata.org/wiki/Q777582"
+      },
+      "worksFor": { "@id": "https://searcus.ch/#organization" },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Italian", "alternateName": "it" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "knowsAbout": [
+        { "@type": "Thing", "name": "Technical SEO" },
+        { "@type": "Thing", "name": "International SEO" },
+        { "@type": "Thing", "name": "Core Web Vitals" },
+        { "@type": "Thing", "name": "Google Ads", "sameAs": "https://www.wikidata.org/wiki/Q4233718" },
+        { "@type": "Thing", "name": "Reddit Ads" },
+        { "@type": "Thing", "name": "Artificial Intelligence", "sameAs": "https://www.wikidata.org/wiki/Q11660" },
+        { "@type": "Thing", "name": "Large Language Model", "sameAs": "https://www.wikidata.org/wiki/Q115305900" },
+        { "@type": "Thing", "name": "Retrieval-Augmented Generation" },
+        { "@type": "Thing", "name": "AI Agents" },
+        { "@type": "Thing", "name": "Python", "sameAs": "https://www.wikidata.org/wiki/Q28865" },
+        { "@type": "Thing", "name": "Server log analysis" }
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "SEO and AI Consultant",
+        "occupationLocation": { "@type": "City", "name": "Lugano" },
+        "skills": ["Technical SEO", "PPC", "Python", "LLM Integration"]
+      },
+      "sameAs": [
+        "https://www.evemilano.com/about-me/",
+        "https://www.linkedin.com/in/giovannisacheli/",
+        "https://www.youtube.com/@EvemilanoSEO",
+        "https://github.com/evemilano",
+        "https://x.com/EVEMilano",
+        "https://www.slideshare.net/giovannisacheli",
+        "https://www.amazon.com/stores/author/B082SXP7LR",
+        "https://www.udemy.com/user/giovanni-sacheli/",
+        "https://www.sistrix.it/esperti/giovanni-sacheli/",
+        "https://www.smau.it/relatori/giovanni.sacheli",
+        "https://seoblog.giorgiotave.it/author/giovanni",
+        "https://www.semrush.com/blog/user/146366177/"
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://searcus.ch/#services",
+      "name": "Servizi Searcus Swiss",
+      "description": "Catalogo dei servizi di consulenza Technical SEO, International SEO, PPC e AI development.",
+      "numberOfItems": 11,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-technical-seo",
+          "name": "Technical SEO",
+          "serviceType": "Technical SEO",
+          "description": "Audit approfonditi su crawling, rendering e indexing. Log file analysis, ottimizzazione Core Web Vitals, dati strutturati, JavaScript SEO e migrazioni. Lavoriamo direttamente con il team di sviluppo.",
+          "category": ["crawling", "rendering", "indexing", "log analysis", "Core Web Vitals", "JS SEO", "migrazioni"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "serviceLocation": { "@type": "Place", "name": "Lugano, Svizzera" },
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-international-seo",
+          "name": "International SEO",
+          "serviceType": "International SEO",
+          "description": "Architettura hreflang, strategia ccTLD/subfolder/subdomain, geo-targeting, keyword research multilingua e strategie di contenuto localizzate.",
+          "category": ["hreflang", "geo-targeting", "multilingua", "ccTLD", "subfolder", "international keyword research"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-ppc",
+          "name": "PPC Advertising",
+          "serviceType": "Pay-per-click advertising",
+          "description": "Gestione Google Ads (Search, Shopping, Display, YouTube, Performance Max) e Reddit Ads. Conversion tracking, ottimizzazione feed, strategie di bidding avanzate.",
+          "category": ["Google Ads", "Reddit Ads", "Performance Max", "Search Ads", "Shopping Ads", "Display Ads", "YouTube Ads", "conversion tracking"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-formazione",
+          "name": "Formazione professionale",
+          "serviceType": "Professional training",
+          "description": "Corsi di Technical SEO, Google Ads, Google Search Console e web analytics. Workshop privati o aziendali, dai fondamenti al livello avanzato. In sede o da remoto.",
+          "category": ["corsi SEO", "corsi Google Ads", "workshop aziendali", "training in-house", "remote training"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Professionals and teams" },
+          "availableChannel": [
+            {
+              "@type": "ServiceChannel",
+              "name": "In sede",
+              "serviceLocation": { "@type": "Place", "name": "Lugano, Svizzera" },
+              "availableLanguage": ["Italian", "English"]
+            },
+            {
+              "@type": "ServiceChannel",
+              "name": "Remoto",
+              "serviceUrl": "https://searcus.ch/it/#servizi",
+              "availableLanguage": ["Italian", "English"]
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-seo-manager",
+          "name": "SEO Manager",
+          "serviceType": "Fractional SEO management",
+          "description": "Orchestrazione strategica della visibilità digitale per aziende. Call mensili, iniziative data-driven, coordinamento con copywriter e sviluppatori interni.",
+          "category": ["enterprise SEO", "strategia", "coordinamento", "fractional SEO", "SEO management"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-competitive-intelligence",
+          "name": "SEO Competitive Intelligence",
+          "serviceType": "Competitive intelligence and SEO gap analysis",
+          "description": "Analisi competitor SEO sistematica: mappatura keyword portfolio, crawl comparison, SERP share modelling sui cluster prioritari, backlink gap audit. Output: opportunity matrix azionabile.",
+          "category": ["keyword gap analysis", "SERP share modelling", "backlink gap", "crawl comparison", "competitor SEO audit", "opportunity matrix"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-llm-integration",
+          "name": "LLM Integration",
+          "serviceType": "Custom AI software development — Large Language Model integration",
+          "description": "Integrazione di Large Language Model (Claude, GPT, Llama, Gemini) in workflow di prodotto: chat assistant, classificazione, estrazione semantica, content generation con guardrails.",
+          "category": ["LLM", "GPT", "Claude", "Llama", "Gemini", "AI integration", "prompt engineering", "guardrails", "function calling"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "isRelatedTo": [
+            { "@id": "https://searcus.ch/#service-ai-agents" },
+            { "@id": "https://searcus.ch/#service-rag-pipelines" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-ai-agents",
+          "name": "AI Agents",
+          "serviceType": "Agentic AI software development",
+          "description": "Sviluppo di agenti AI per automatizzare processi business: research agents, classificatori, agenti di analisi SEO, integrazioni multi-tool con MCP, orchestrazione di sub-agent.",
+          "category": ["agentic AI", "MCP", "multi-agent", "tool use", "task automation", "research agents", "ReAct"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "isRelatedTo": [
+            { "@id": "https://searcus.ch/#service-llm-integration" },
+            { "@id": "https://searcus.ch/#service-ai-automation" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-rag-pipelines",
+          "name": "RAG Pipelines",
+          "serviceType": "Retrieval-Augmented Generation pipelines",
+          "description": "Architettura di pipeline RAG: ingestion, chunking, embedding, vector database, retrieval, re-ranking, grounding con citazioni. Casi d'uso: knowledge base, customer support, internal search semantica.",
+          "category": ["RAG", "embedding", "vector database", "chunking", "re-ranking", "semantic search", "knowledge base", "grounding"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "isRelatedTo": [
+            { "@id": "https://searcus.ch/#service-llm-integration" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-ai-automation",
+          "name": "AI Automation",
+          "serviceType": "AI-driven workflow automation",
+          "description": "Automazione di processi ripetitivi tramite AI: triage email, classificazione ticket, generazione report SEO, monitoraggio SERP, content briefing. Integrazione con stack esistenti (n8n, Make, Python custom).",
+          "category": ["AI automation", "workflow automation", "n8n", "Make", "Python automation", "SEO automation", "report automation"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "isRelatedTo": [
+            { "@id": "https://searcus.ch/#service-ai-agents" },
+            { "@id": "https://searcus.ch/#service-custom-ai-software" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://searcus.ch/#service-custom-ai-software",
+          "name": "Custom AI Software",
+          "serviceType": "Custom AI software development",
+          "description": "Sviluppo software AI custom in Python: tool interni, dashboard data-driven, dataset pipelines, fine-tuning, integrazioni API. End-to-end dalla raccolta requisiti al deploy.",
+          "category": ["custom software", "Python", "data pipelines", "API integration", "dashboard", "fine-tuning", "MLOps"],
+          "provider": { "@id": "https://searcus.ch/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Place", "name": "Europe" }
+          ],
+          "audience": { "@type": "BusinessAudience", "audienceType": "Enterprise" },
+          "isRelatedTo": [
+            { "@id": "https://searcus.ch/#service-ai-automation" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://searcus.ch/it/#servizi",
+            "availableLanguage": ["Italian", "English"]
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://searcus.ch/#clients",
+      "name": "Clienti enterprise Searcus Swiss",
+      "description": "Selezione di clienti enterprise serviti da Searcus Swiss SAGL dal 2010: brand internazionali nei settori pharma, banking, fashion, editoriale, hospitality, e-commerce.",
+      "numberOfItems": 28,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Organization", "name": "Bayer", "sameAs": "https://www.wikidata.org/wiki/Q152051" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Organization", "name": "Wolters Kluwer", "sameAs": "https://www.wikidata.org/wiki/Q1990413" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Organization", "name": "Ermenegildo Zegna", "sameAs": "https://www.wikidata.org/wiki/Q683036" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Organization", "name": "Würth", "sameAs": "https://www.wikidata.org/wiki/Q706713" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Organization", "name": "EFG International", "sameAs": "https://www.wikidata.org/wiki/Q5320560" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Organization", "name": "BSI Bank", "sameAs": "https://www.wikidata.org/wiki/Q794594" } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "Organization", "name": "Wyndham Hotels & Resorts", "sameAs": "https://www.wikidata.org/wiki/Q2780585" } },
+        { "@type": "ListItem", "position": 8, "item": { "@type": "Organization", "name": "Moleskine", "sameAs": "https://www.wikidata.org/wiki/Q1539436" } },
+        { "@type": "ListItem", "position": 9, "item": { "@type": "Organization", "name": "IBSA Swiss" } },
+        { "@type": "ListItem", "position": 10, "item": { "@type": "Organization", "name": "We Are Social", "sameAs": "https://www.wikidata.org/wiki/Q108149146" } },
+        { "@type": "ListItem", "position": 11, "item": { "@type": "Organization", "name": "Lacertosus" } },
+        { "@type": "ListItem", "position": 12, "item": { "@type": "Organization", "name": "Consulcesi" } },
+        { "@type": "ListItem", "position": 13, "item": { "@type": "Organization", "name": "Farmy.ch" } },
+        { "@type": "ListItem", "position": 14, "item": { "@type": "Organization", "name": "TryHackMe" } },
+        { "@type": "ListItem", "position": 15, "item": { "@type": "Organization", "name": "Engineering Ingegneria Informatica", "sameAs": "https://www.wikidata.org/wiki/Q3722810" } },
+        { "@type": "ListItem", "position": 16, "item": { "@type": "Organization", "name": "La Martina" } },
+        { "@type": "ListItem", "position": 17, "item": { "@type": "Organization", "name": "TIM WCAP" } },
+        { "@type": "ListItem", "position": 18, "item": { "@type": "Organization", "name": "The Bridge Firenze" } },
+        { "@type": "ListItem", "position": 19, "item": { "@type": "Organization", "name": "Tigros", "sameAs": "https://www.wikidata.org/wiki/Q3995215" } },
+        { "@type": "ListItem", "position": 20, "item": { "@type": "Organization", "name": "Tinext" } },
+        { "@type": "ListItem", "position": 21, "item": { "@type": "Organization", "name": "HG Pooled Management" } },
+        { "@type": "ListItem", "position": 22, "item": { "@type": "Organization", "name": "Angel Aligner" } },
+        { "@type": "ListItem", "position": 23, "item": { "@type": "Organization", "name": "Aqseptence Group" } },
+        { "@type": "ListItem", "position": 24, "item": { "@type": "Organization", "name": "Freedome" } },
+        { "@type": "ListItem", "position": 25, "item": { "@type": "Organization", "name": "Quotidiano Sanità" } },
+        { "@type": "ListItem", "position": 26, "item": { "@type": "Organization", "name": "Micuro" } },
+        { "@type": "ListItem", "position": 27, "item": { "@type": "Organization", "name": "iDoctors" } },
+        { "@type": "ListItem", "position": 28, "item": { "@type": "Organization", "name": "InSella" } }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://searcus.ch/#website",
+      "url": "https://searcus.ch/",
+      "name": "Searcus Swiss SAGL",
+      "alternateName": "Searcus",
+      "description": "Sito ufficiale di Searcus Swiss SAGL, agenzia di consulenza Technical SEO, PPC e AI development a Lugano.",
+      "inLanguage": ["it", "en"],
+      "publisher": { "@id": "https://searcus.ch/#organization" },
+      "copyrightHolder": { "@id": "https://searcus.ch/#organization" },
+      "copyrightYear": 2010
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://searcus.ch/it/#webpage",
+      "url": "https://searcus.ch/it/",
+      "name": "Searcus Swiss SAGL — Consulenza Technical SEO, International SEO e PPC, Lugano",
+      "description": "Searcus Swiss SAGL: consulenza technical SEO e PPC a Lugano. Crawling, rendering, indexing, log analysis, Core Web Vitals, SEO internazionale, Google Ads e Reddit Ads. Dal 2010. Google Partner.",
+      "inLanguage": "it",
+      "isPartOf": { "@id": "https://searcus.ch/#website" },
+      "about": { "@id": "https://searcus.ch/#organization" },
+      "mainEntity": { "@id": "https://searcus.ch/#organization" },
+      "primaryImageOfPage": { "@id": "https://searcus.ch/#logo" },
+      "significantLink": [
+        "https://searcus.ch/it/#servizi",
+        "https://searcus.ch/it/#clienti",
+        "https://searcus.ch/it/#chi-siamo",
+        "https://searcus.ch/it/#contatti"
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "section#servizi h2", "section#chi-siamo p"]
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body class="bg-void text-chalk font-sans grain">
 
     <!-- ========== NAVBAR ========== -->
     <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl glass rounded-full z-50 px-4 md:px-6 py-3">
         <div class="flex items-center justify-between">
-            <a href="/it/" class="font-display text-lg font-semibold tracking-widest text-chalk uppercase">Searcus</a>
+            <a href="/it/" class="flex items-center gap-2.5 font-display text-lg font-semibold tracking-widest text-chalk uppercase">
+                <img src="/assets/images/logo.png" alt="" width="28" height="28" class="h-7 w-auto" decoding="async">
+                <span>Searcus</span>
+            </a>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#servizi" class="text-sm text-mist hover:text-chalk link-animated transition-colors">Servizi</a>
                 <a href="#clienti" class="text-sm text-mist hover:text-chalk link-animated transition-colors">Clienti</a>
@@ -214,6 +787,40 @@
             <h2 class="font-display text-3xl md:text-4xl font-bold mb-14 reveal">Cosa facciamo</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 reveal-stagger">
+                <!-- AI Consulting & Automation — full-width hero card -->
+                <div class="lg:col-span-3 bg-obsidian border border-wire rounded-2xl p-8 md:p-10 card-glow relative overflow-hidden reveal">
+                    <div class="dot-grid absolute inset-0 opacity-30 pointer-events-none"></div>
+                    <div class="relative md:flex md:gap-12 md:items-start">
+                        <div class="md:flex-1">
+                            <span class="font-mono text-xs text-signal mb-4 block">&lt;ai-consulting /&gt;</span>
+                            <h3 class="font-sans text-xl md:text-2xl font-semibold mb-4 text-chalk">Consulenza AI e Automazione</h3>
+                            <p class="text-mist leading-relaxed mb-6 max-w-3xl">
+                                Forniamo soluzioni AI custom alle aziende: dallo sviluppo di applicativi e pipeline di automazione alla formazione dei team sull'uso quotidiano di questi strumenti per amplificare il proprio lavoro. Progettiamo sistemi <strong class="text-chalk">RAG</strong> in produzione &mdash; lo stesso stack che alimenta il chatbot di questa homepage &mdash; e integriamo LLM (Claude, GPT, modelli open-source) nei flussi operativi via API, function calling e agenti. Eseguiamo <strong class="text-chalk">AI accessibility audit</strong>: l'equivalente del crawl budget per i motori generativi, per assicurare che ChatGPT, Perplexity, Claude e Google AI Overviews indicizzino e citino correttamente i tuoi contenuti (GEO / AEO). Automatizziamo task ripetitivi con pipeline su misura &mdash; research, content drafting, data extraction, supporto clienti &mdash; e formiamo i team aziendali con corsi pratici sull'uso quotidiano dell'AI: meno tempo su attivit&agrave; ripetitive, output di qualit&agrave; superiore, produttivit&agrave; misurabile.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="pill-tag bg-slate text-mist">RAG systems</span>
+                                <span class="pill-tag bg-slate text-mist">LLM integration</span>
+                                <span class="pill-tag bg-slate text-mist">GEO / AEO</span>
+                                <span class="pill-tag bg-slate text-mist">AI accessibility audit</span>
+                                <span class="pill-tag bg-slate text-mist">AI agents</span>
+                                <span class="pill-tag bg-slate text-mist">AI automation</span>
+                                <span class="pill-tag bg-slate text-mist">prompt engineering</span>
+                                <span class="pill-tag bg-slate text-mist">corsi AI</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:block mt-8 md:mt-0 md:w-56 lg:w-64 shrink-0">
+                            <div class="bg-slate border border-wire rounded-xl p-5 font-mono text-xs leading-relaxed text-mist">
+                                <p class="text-signal mb-3">// ai-engagement</p>
+                                <p><span class="text-chalk">rag_pipeline</span>: <span class="text-verified">production</span></p>
+                                <p><span class="text-chalk">llm_stack</span>: <span class="text-chalk">Claude &middot; GPT &middot; OSS</span></p>
+                                <p><span class="text-chalk">geo_audit</span>: <span class="text-signal">ChatGPT &middot; Perplexity</span></p>
+                                <p><span class="text-chalk">agents_deployed</span>: <span class="text-verified">&check;</span></p>
+                                <p class="mt-3 text-wire">&rarr; misurando ROI...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Technical SEO — large card -->
                 <div class="lg:col-span-2 bg-obsidian border border-wire rounded-2xl p-8 md:p-10 card-glow relative overflow-hidden reveal">
                     <div class="dot-grid absolute inset-0 opacity-30 pointer-events-none"></div>
@@ -433,7 +1040,7 @@
                     <p class="text-mist text-sm mt-2 font-mono">anni di esperienza</p>
                 </div>
                 <div class="reveal">
-                    <p class="font-display text-5xl md:text-6xl font-extrabold text-chalk counter-value" data-counter="500" data-suffix="+">0</p>
+                    <p class="font-display text-5xl md:text-6xl font-extrabold text-chalk counter-value" data-counter="600" data-suffix="+">0</p>
                     <p class="text-mist text-sm mt-2 font-mono">siti analizzati</p>
                 </div>
                 <div class="reveal">
@@ -628,8 +1235,12 @@
 
     <!-- ========== FOOTER ========== -->
     <footer class="bg-void border-t border-wire pt-16 pb-8 px-4">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            <!-- Col 1: Brand -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+            <!-- Col 1: Logo -->
+            <div class="flex justify-start lg:justify-center">
+                <img src="/assets/images/logo.png" alt="Searcus Swiss SAGL" width="200" height="200" class="h-[200px] w-[200px]" decoding="async" loading="lazy">
+            </div>
+            <!-- Col 2: Brand -->
             <div>
                 <p class="font-display text-xl font-bold tracking-widest text-chalk uppercase mb-3">Searcus</p>
                 <p class="text-sm text-mist leading-relaxed mb-4">
@@ -650,10 +1261,11 @@
                     </a>
                 </div>
             </div>
-            <!-- Col 2: Servizi -->
+            <!-- Col 3: Servizi -->
             <div>
                 <p class="text-chalk font-semibold mb-4">Servizi</p>
                 <ul class="space-y-2 text-sm">
+                    <li><a href="#servizi" class="text-mist hover:text-chalk transition-colors">Consulenza AI &amp; Automation</a></li>
                     <li><a href="#servizi" class="text-mist hover:text-chalk transition-colors">Technical SEO</a></li>
                     <li><a href="#servizi" class="text-mist hover:text-chalk transition-colors">International SEO</a></li>
                     <li><a href="#servizi" class="text-mist hover:text-chalk transition-colors">Google Ads</a></li>
@@ -662,7 +1274,7 @@
                     <li><a href="#servizi" class="text-mist hover:text-chalk transition-colors">SEO Manager</a></li>
                 </ul>
             </div>
-            <!-- Col 3: Risorse -->
+            <!-- Col 4: Risorse -->
             <div>
                 <p class="text-chalk font-semibold mb-4">Risorse</p>
                 <ul class="space-y-2 text-sm">
@@ -671,7 +1283,7 @@
                     <li><a href="https://www.sistrix.com" target="_blank" rel="noopener" class="text-mist hover:text-chalk transition-colors">SISTRIX Partner</a></li>
                 </ul>
             </div>
-            <!-- Col 4: Contatti -->
+            <!-- Col 5: Contatti -->
             <div>
                 <p class="text-chalk font-semibold mb-4">Contatti</p>
                 <ul class="space-y-2 text-sm text-mist">
