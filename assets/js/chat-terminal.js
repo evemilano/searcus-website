@@ -399,7 +399,8 @@
                 body: JSON.stringify({
                     message: message.slice(0, MAX_INPUT),
                     session_id: state.sessionId,
-                    current_url: window.location.href
+                    current_url: window.location.href,
+                    source: 'searcus'
                 }),
                 signal: controller.signal
             });

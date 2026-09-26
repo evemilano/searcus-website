@@ -18,7 +18,7 @@ Static website for **Searcus Swiss SAGL**, an SEO and Google Ads consulting agen
 ## Multilingual Setup
 
 - Two languages: **Italian** (`/it/`) and **English** (`/en/`), each with its own `index.html`.
-- Root `index.html` redirects to `/it/` (Italian is the default language).
+- `/` is 301-redirected to `/it/` by nginx (Italian is the default language); the root `index.html` is never served.
 - Hreflang tags and `x-default` point to `/it/`.
 - Language switcher links in the navbar point to the other locale's page.
 - Content in each language file is fully duplicated (not templated) — **every change must be applied to both `/it/index.html` and `/en/index.html` simultaneously. The two pages must always stay in sync.** Never modify one without updating the other.
@@ -63,6 +63,15 @@ The site is served in production by nginx from this same directory (`root /home/
 - `location ^~ /backup/` — blocks the entire `backup/` directory (internal markdown content, pricing, client list).
 
 **When adding new non-public files to the repo root**, extend the relevant `location` block in the nginx vhost and reload with `sudo nginx -t && sudo systemctl reload nginx`. Anything publicly servable (new top-level HTML, new asset folder, etc.) does NOT need changes — the default `location /` with `try_files` still handles it.
+
+### Redirect 301
+
+All redirects live in the nginx vhost (none in the repo — the root `index.html` is never served):
+
+- **HTTP → HTTPS** and **www → non-www**: port-80 server and a dedicated `server_name www.searcus.ch` 443 block both `return 301 https://searcus.ch$request_uri` (single hop).
+- **`/` → `/it/`**: `location = /` in the main server.
+- **Legacy URLs**: a `map $uri $searcus_redirect { ... }` table at the top of the vhost (regex, optional trailing slash), applied by a server-level `if ($searcus_redirect) { return 301 ...; }`. To add a redirect, add one line to the map and reload nginx.
+- **410 Gone** for old WordPress leftovers: `location ~ /feed/?$` (all RSS feeds) and `location ^~ /wp-content/uploads/` (old media).
 
 ### `/api/chat` reverse proxy (chatbot backend)
 
